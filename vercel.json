@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/kyc",
+      "destination": "https://exp014.thirdfactor.ai/tfauth/get-kyc-url/"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
