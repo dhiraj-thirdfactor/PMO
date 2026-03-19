@@ -11,6 +11,13 @@ export default defineConfig(({ mode }) => ({
     hmr: {
       overlay: false,
     },
+    proxy: {
+      "/api/kyc": {
+        target: "https://exp014.thirdfactor.ai/tfauth/get-kyc-url/",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/kyc/, ""),
+      },
+    },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
